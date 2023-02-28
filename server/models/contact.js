@@ -1,4 +1,4 @@
-let mongoose = require('mongoose');
+let mongoose = require('mongoose')
 
 // create a model class
 let contactModel = mongoose.Schema({
