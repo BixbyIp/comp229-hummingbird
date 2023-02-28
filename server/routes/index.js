@@ -19,7 +19,7 @@ router.get('/projects',indexController.displayProjectsPage);
 router.get('/services',indexController.displayServicesPage);
 
 /* GET Contact Us page. */
-router.get('/contact',indexController.displayContactMePage);
+router.get('/contact',indexController.displayContactPage);
 
 
 /* GET Route for displaying the login Page */
