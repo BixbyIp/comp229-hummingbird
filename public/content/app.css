@@ -1,0 +1,39 @@
+/**
+ * This will be the custom css file for portfolio web site
+ * 
+ * @author bixby
+ * @studentID 301269672
+ * @date Wednesday, 08 February 2022 @ 0900
+ * @file app.css
+ *
+ */
+
+/* custom css goes here */
+  .bg-cover {
+      background-attachment: static;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+  }
+
+  /*override default bootstrap .jumbotron css setting */
+  .jumbotron .container {
+    position:relative;
+    z-index:2;
+    
+    background:rgba(0,0,0,0.2);
+    padding:2rem;
+    border:1px solid rgba(0,0,0,0.1);
+    border-radius:10px;
+  }
+  
+  .jumbotron-background {
+    object-fit:cover;
+    font-family: 'object-fit: cover;';
+    position:absolute;
+    top:0;
+    z-index:1;
+    width:100%;
+    height:100%;
+    opacity:0.5;
+  }

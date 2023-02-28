@@ -1,0 +1,26 @@
+<!-- Main Navigation -->
+<div class="container py-4">
+  <main>
+    <div class="container">
+      <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+        <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+          <img src="/image/computer_logo.png" alt="logo" width="50" height="50">
+        </a>
+        <ul class="nav nav-pills fas fa-bars nav justify-content-end">
+          <li class="nav-item"><a href="./" class="nav-link active" aria-current="page">Home</a></li>
+          <li class="nav-item"><a href="/about" class="nav-link">About</a></li>
+          <li class="nav-item"><a href="/projects" class="nav-link">Projects</a></li>
+          <li class="nav-item"><a href="/services" class="nav-link">Services</a></li>
+          <li class="nav-item"><a href="/contact" class="nav-link">Contact</a></li>
+          <li class="nav-item"><a href="/contact-list" class="nav-link">Business Contacts List</a></li>
+          <% if(typeof displayName == 'string' && displayName) { %>
+            <li class="navbar-text">Hello, <%= displayName %></li>
+            <li class="nav-item"><a href="/logout" class="nav-link"> Logout</a></li>
+            <%} else { %>
+              <li class="nav-item"><a href="/login" class="nav-link">Login</a></li>
+            <% } %>
+        </ul>
+      </header>
+    </div>
+  </main>
+</div>
