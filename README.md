@@ -1,1 +1,1 @@
-# comp229-hummblingbird
+# comp229-hummingbird
