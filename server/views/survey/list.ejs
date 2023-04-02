@@ -2,13 +2,13 @@
 <%- include ../partials/main_nav.ejs %>
 
   <!-- Main Content -->
-  <section id="contact">
+  <section id="Survey">
     <div class="container" data-aos="fade-up">
       <div class="section-title">
-        <h2>Business Contacts List</h2>
+        <h2>Survey List</h2>
         <% if(typeof displayName == 'string' && displayName) { %>
-        <a href="contact-list/add" class="btn btn-primary" role="button">
-          <i class = "fas fa-plus-circle"></i>Add a Contact
+        <a href="survey/add" class="btn btn-primary" role="button">
+          <i class = "fas fa-plus-circle"></i>Add a Survey
         </a>
         <% } %>
       </div>
@@ -35,19 +35,19 @@
             
             <!-- Repeatable Template now -->
 
-            <% for(let count = 0; count < ContactList.length; count++){ %>
+            <% for(let count = 0; count < SurveyList.length; count++){ %>
               <tr>
-                <td class="text-center"><%= ContactList[count].first_name %></td>
-                <td class="text-center"><%= ContactList[count].last_name %></td>
-                <td class="text-center"><%= ContactList[count].telephone %></td>
-                <td class="text-center"><%= ContactList[count].email %></td>
+                <td class="text-center"><%= SurveyList[count].first_name %></td>
+                <td class="text-center"><%= SurveyList[count].last_name %></td>
+                <td class="text-center"><%= SurveyList[count].telephone %></td>
+                <td class="text-center"><%= SurveyList[count].email %></td>
                 <% if(typeof displayName == 'string' && displayName) { %>
                 <td class="text-center">
-                <a href="/contact-list/edit/<%= ContactList[count]._id %>" class="btn btn-primary btn-sm">
+                <a href="/survey/edit/<%= SurveyList[count]._id %>" class="btn btn-primary btn-sm">
                 <i class="fas fa-pencil-alt"></i> Edit</a>
                 </td>
                 <td class="text-center">
-                  <a href="/contact-list/delete/<%= ContactList[count]._id %>" class="btn btn-danger btn-sm">
+                  <a href="/survey/delete/<%= SurveyList[count]._id %>" class="btn btn-danger btn-sm">
                     <i class="fas fa-trash alt"></i>Delete</a>
               </td>
               <% } %>

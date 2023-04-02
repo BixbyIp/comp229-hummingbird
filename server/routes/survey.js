@@ -4,7 +4,7 @@ let mongoose = require('mongoose');
 
 let passport = require('passport')
 
-let contactController = require('../controllers/contact')
+let surveyController = require('../controllers/survey')
 
 // helper function for guard purposes
 function requireAuth(req,res,next)
@@ -12,27 +12,28 @@ function requireAuth(req,res,next)
     // check if the user is logged in
     if(!req.isAuthenticated())
     {
-        return res.redirect('/login');
+        /* return res.redirect('/survey'); */
+        router.get('/',surveyController.displaySurveyList);
     }
     next();
 }
 
-/* GET Route for the Contact list page - READ Operation */
-router.get('/',requireAuth,contactController.displayContactList);
+/* GET Route for the survey list page - READ Operation */
+router.get('/',requireAuth,surveyController.displaySurveyList);
 
 /* GET Route for displaying the Add page - CREATE Operation */
-router.get('/add',requireAuth,contactController.displayAddPage);
+router.get('/add',requireAuth,surveyController.displayAddPage);
 
 /* POST Route for processing the Add page - CREATE Operation */
-router.post('/add',requireAuth,contactController.processAddPage);
+router.post('/add',requireAuth,surveyController.processAddPage);
 
 /* GET Route for displaying the Edit page - UPDATE Operation */
-router.get('/edit/:id',requireAuth,contactController.displayEditPage);
+router.get('/edit/:id',requireAuth,surveyController.displayEditPage);
 
 /* POST Route for processing the Edit page - UPDATE Operation */
-router.post('/edit/:id',requireAuth,contactController.processEditPage);
+router.post('/edit/:id',requireAuth,surveyController.processEditPage);
 
 /* GET to perform Deletion - DELETE Operation */
-router.get('/delete/:id',requireAuth,contactController.performDelete);
+router.get('/delete/:id',requireAuth,surveyController.performDelete);
 
 module.exports = router;

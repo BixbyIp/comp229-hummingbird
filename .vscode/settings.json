@@ -1,4 +1,4 @@
 {
-    "appService.defaultWebAppToDeploy": "/subscriptions/547fca1e-c205-42d1-a48e-80f61814a454/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/comp229-assignment-2",
+    "appService.defaultWebAppToDeploy": "/subscriptions/547fca1e-c205-42d1-a48e-80f61814a454/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/comp229-hummblingbird",
     "appService.deploySubpath": "."
 }

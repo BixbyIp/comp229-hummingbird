@@ -15,14 +15,6 @@ module.exports.displayAboutPage = (req,res,next) => {
     res.render('index', {title: 'About',displayName: req.user ? req.user.displayName: ''})
 }
 
-module.exports.displayProjectsPage = (req,res,next) => {
-    res.render('index', {title: 'Projects',displayName: req.user ? req.user.displayName: ''})
-}
-
-module.exports.displayServicesPage = (req,res,next) => {
-    res.render('index', {title: 'Services',displayName: req.user ? req.user.displayName: ''})
-}
-
 module.exports.displayContactPage = (req,res,next) => {
     res.render('index', {title: 'Contact',displayName: req.user ? req.user.displayName: ''})
 }
@@ -60,7 +52,7 @@ module.exports.processLoginPage = (req,res,next) => {
             if(err){
                 return next(err)
             }
-            return res.redirect('/contact-list')
+            return res.redirect('/survey')
         });
 
     })(req,res,next)
@@ -119,7 +111,7 @@ module.exports.processRegisterPage = (req, res, next) => {
 
             // redirect the user and authenticate them
             return passport.authenticate('local')(req,res,() => {
-                res.redirect('/contact-list')
+                res.redirect('/survey')
             });    
         }
   });
