@@ -19,10 +19,10 @@
           <table class ="table table-bordered table-striped table-hover">
             <!-- Header Row-->
             <tr>
-              <th class="text-center">First Name</th>
-              <th class="text-center">Last Name</th>
-              <th class="text-center">Telephone</th>
-              <th class="text-center">Email</th>
+              <th class="text-center">Title</th>
+              <th class="text-center">Start Date</th>
+              <th class="text-center">End Date</th>
+              <th class="text-center">Description</th>
               <% if(typeof displayName == 'string' && displayName) { %>
               <th class="text-center">
                 
@@ -37,10 +37,10 @@
 
             <% for(let count = 0; count < SurveyList.length; count++){ %>
               <tr>
-                <td class="text-center"><%= SurveyList[count].first_name %></td>
-                <td class="text-center"><%= SurveyList[count].last_name %></td>
-                <td class="text-center"><%= SurveyList[count].telephone %></td>
-                <td class="text-center"><%= SurveyList[count].email %></td>
+                <td class="text-center"><%= SurveyList[count].title %></td>
+                <td class="text-center"><%= SurveyList[count].start_date %></td>
+                <td class="text-center"><%= SurveyList[count].end_date %></td>
+                <td class="text-center"><%= SurveyList[count].description %></td>
                 <% if(typeof displayName == 'string' && displayName) { %>
                 <td class="text-center">
                 <a href="/survey/edit/<%= SurveyList[count]._id %>" class="btn btn-primary btn-sm">

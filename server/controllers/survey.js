@@ -2,6 +2,7 @@ let express = require('express')
 let router = express.Router()
 let mongoose = require('mongoose')
 let passport = require('passport')
+const dateFns = require('date-fns');
 
 // define the User Model instance
 let userModel = require('../models/user')
@@ -9,6 +10,8 @@ let User = userModel.User; // alias
 
 // create a reference to the survey model
 let Survey = require('../models/survey')
+
+
 
 module.exports.displaySurveyList = (req,res, next) => {
    
@@ -22,8 +25,7 @@ module.exports.displaySurveyList = (req,res, next) => {
                res.render('survey/list',{title:'Survey List',SurveyList: surveyList, displayName: req.user ? req.user.displayName : ''})
             }
 
-      }).sort({last_name:1,first_name:1}); // sort by last name and then first name
-
+      }).sort({title:1}); // sort by title
 }
 
 module.exports.displayAddPage= (req,res,next) => {
@@ -32,10 +34,10 @@ module.exports.displayAddPage= (req,res,next) => {
 
 module.exports.processAddPage = (req,res,next) => {
     let newSurvey = Survey({
-       "first_name": req.body.firstname,
-       "last_name": req.body.lastname,
-       "telephone": req.body.telephone,
-       "email": req.body.email
+       "title": req.body.title,
+       "start_date": req.body.startdate,
+       "end_date": req.body.enddate,
+       "description": req.body.description
     });
  
     Survey.create(newSurvey, (err,Survey) => {
@@ -74,10 +76,10 @@ module.exports.processAddPage = (req,res,next) => {
   
     let updatedSurvey = Survey({
      "_id": id,
-     "first_name": req.body.firstname,
-     "last_name": req.body.lastname,
-     "telephone": req.body.telephone,
-     "email": req.body.email
+     "title": req.body.title,
+     "start_date": req.body.startdate,
+     "end_date": req.body.enddate,
+     "description": req.body.description
     });
   
     Survey.updateOne({_id: id},updatedSurvey, (err) => {
